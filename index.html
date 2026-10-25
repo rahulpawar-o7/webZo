@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WebZo — Websites That Make Your Business Stand Out</title>
+<meta name="description" content="WebZo designs and builds modern, responsive websites for local shops and growing brands.">
+<style>
+:root{--bg:#07111F;--bg2:#0B1B30;--blue:#1677FF;--cyan:#55C8FF;--tx:#F4F7FC;--tx2:#A9B8CC;--glass:rgba(255,255,255,.06);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:90px;background:var(--bg)}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:radial-gradient(900px 600px at 70% 10%,#0c3a86 0,transparent 60%),radial-gradient(700px 500px at 0 60%,#0a2a5c55,transparent 60%),var(--bg);color:var(--tx);overflow-x:hidden;line-height:1.55}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);backdrop-filter:blur(16px);background:rgba(7,17,31,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:26px}
+.logo i{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;font-style:normal;font-size:18px;box-shadow:0 0 24px #1677ff88;animation:pulse 3s infinite}
+.links{display:flex;gap:30px}.links a{color:var(--tx2);position:relative;padding:6px 0;transition:.25s}
+.links a:hover,.links a.on{color:#fff}.links a:after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--cyan);transition:.3s}.links a:hover:after,.links a.on:after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:99px;font-weight:600;background:linear-gradient(90deg,#0b7bff,#1e90ff);box-shadow:0 0 28px #1677ffaa;transition:.3s;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 44px #1677ffee}.btn:after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(90deg,transparent,#fff5,transparent);transform:skewX(-20deg);transition:.7s}.btn:hover:after{left:130%}
+.btn.ghost{background:rgba(255,255,255,.08);box-shadow:none;border:1px solid #ffffff22}
+.btn[disabled]{opacity:.6;pointer-events:none}
+#burger{display:none;width:44px;height:44px;border-radius:12px;background:var(--glass);font-size:22px}
+section{padding:96px 0;position:relative}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:110px}
+.hgrid{display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:center}
+.eyebrow{color:var(--blue);font-weight:700;letter-spacing:.04em;font-size:15px}
+h1{font-size:clamp(40px,6.2vw,76px);line-height:1.04;font-weight:800;letter-spacing:-.03em;margin:18px 0}
+.grad{background:linear-gradient(90deg,#1677ff,#55c8ff,#1677ff);background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 5s linear infinite}
+h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.02em;margin-bottom:12px}
+.lead{color:var(--tx2);font-size:19px;max-width:520px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.stage{position:relative;height:540px;perspective:1200px}
+.card3{position:absolute;border-radius:18px;overflow:hidden;cursor:pointer;border:1px solid #ffffff2a;box-shadow:0 30px 70px #000a,0 0 40px #1677ff44;transition:.45s cubic-bezier(.2,.8,.2,1);animation:float 6s ease-in-out infinite}
+.card3:hover{transform:scale(1.07) rotate(0)!important;z-index:9;box-shadow:0 30px 80px #000c,0 0 70px #55c8ffaa}
+.c1{width:62%;height:300px;left:6%;top:0;transform:rotate(7deg);background:#fbf2dc;color:#5a3318}
+.c2{width:56%;height:230px;left:0;top:300px;transform:rotate(-12deg);background:#eaf3ff;color:#0b2a5c;animation-delay:-2s}
+.c3{width:50%;height:250px;right:0;top:290px;transform:rotate(10deg);background:#16130f;color:#f3e6d4;animation-delay:-4s}
+.card3 .in{padding:18px}.card3 b{font-family:Georgia,serif;font-size:26px;display:block;margin:10px 0}
+.ball{display:inline-block;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e8924a,#a8461a);margin:3px;box-shadow:0 6px 10px #0005;animation:bob 3s infinite}
+.tag{position:absolute;z-index:5;padding:12px 18px;border-radius:14px;background:rgba(30,60,110,.55);backdrop-filter:blur(12px);border:1px solid #ffffff22;font-weight:600;font-size:14px;cursor:pointer;animation:float 5s ease-in-out infinite;transition:.3s}.tag:hover{background:rgba(22,119,255,.6)}
+.form{position:absolute;right:0;top:20px;width:260px;z-index:6;padding:18px;border-radius:18px;background:rgba(255,255,255,.07);backdrop-filter:blur(14px);border:1px solid #ffffff22;display:none}
+.strip{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#6f86a6;font-size:22px;padding:30px 0;overflow:hidden}
+.strip span{animation:glow 6s infinite}.strip span:nth-child(2){animation-delay:2s}.strip span:nth-child(3){animation-delay:4s}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:36px}
+.glass{background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border-radius:20px;padding:26px;box-shadow:0 18px 50px #0006;transition:.35s;cursor:pointer;text-align:left;display:block;width:100%}
+.glass:hover{transform:translateY(-8px);box-shadow:0 22px 60px #000a,0 0 40px #1677ff55;background:linear-gradient(160deg,rgba(22,119,255,.22),rgba(255,255,255,.04))}
+.glass .ic{font-size:34px;margin-bottom:10px;display:block}.glass p{color:var(--tx2);font-size:15px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.chip{padding:9px 18px;border-radius:99px;background:var(--glass);transition:.25s;font-size:14px}.chip:hover{background:#1677ff44}.chip.on{background:var(--blue);box-shadow:0 0 22px #1677ff99}
+.pc{padding:0;overflow:hidden}.pc .th{height:170px;display:grid;place-items:center;font-size:54px;position:relative}.pc .th:after{content:"Visit site ↗";position:absolute;inset:auto 12px 12px auto;padding:6px 12px;border-radius:99px;background:#000a;font-size:12px;opacity:0;transition:.3s}.pc:hover .th:after{opacity:1}
+.pc .bd{padding:20px}.pc small{color:var(--cyan)}
+.steps{counter-reset:s}.steps .glass{cursor:default}.steps .glass:before{counter-increment:s;content:"0" counter(s);font-size:40px;font-weight:800;color:transparent;-webkit-text-stroke:1px var(--cyan);display:block}
+.reveal{opacity:0;transform:translateY(34px);transition:1s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}
+form.f{display:grid;gap:16px;margin-top:30px;grid-template-columns:1fr 1fr}.f .full{grid-column:1/-1}
+label{font-size:13px;color:var(--tx2);display:grid;gap:6px}
+input,select,textarea{font:inherit;color:var(--tx);background:rgba(255,255,255,.07);border:1px solid #ffffff1c;border-radius:12px;padding:13px 14px;width:100%;transition:.25s}
+select option{background:var(--bg2)}input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px #55c8ff33}
+.bad{border-color:#ff6b6b!important}.err{color:#ff8f8f;font-size:12px;min-height:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips label{display:inline-flex;grid-template:none;padding:8px 14px;border-radius:99px;background:var(--glass);cursor:pointer;color:var(--tx);flex-direction:row;align-items:center;gap:6px;transition:.2s}.chips input{width:auto;padding:0}.chips label:has(input:checked){background:var(--blue)}
+.hp{position:absolute;left:-9999px}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(3,8,16,.78);backdrop-filter:blur(10px);display:none;place-items:center;padding:20px}.modal.show{display:grid;animation:fade .3s}
+.box{max-width:560px;width:100%;max-height:88vh;overflow:auto;background:var(--bg2);border-radius:24px;padding:30px;box-shadow:0 0 80px #1677ff55;animation:pop .4s cubic-bezier(.2,1.4,.4,1)}
+.ok{font-size:64px;animation:pop .6s}
+footer{padding:50px 0 30px;background:#050d19;color:var(--tx2);font-size:14px}.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:30px}footer h4{color:#fff;margin-bottom:10px}footer a{display:block;padding:3px 0}footer a:hover{color:var(--cyan)}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;font-size:26px;box-shadow:0 0 30px #25d36688;animation:pulse 2.5s infinite}
+@keyframes float{50%{translate:0 -14px}}@keyframes bob{50%{translate:0 -6px}}@keyframes flow{to{background-position:200%}}
+@keyframes pulse{50%{box-shadow:0 0 40px #1677ffcc}}@keyframes glow{0%,100%{color:#6f86a6}50%{color:#fff}}@keyframes fade{from{opacity:0}}@keyframes pop{from{transform:scale(.8);opacity:0}}
+@media(max-width:900px){.links{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:#07111Ff2;padding:10px 22px 20px}.links.open{display:flex}.links a{padding:14px 0}#burger{display:block}.nav>.btn{display:none}.hgrid{grid-template-columns:1fr}.stage{height:460px}.fg{grid-template-columns:1fr 1fr}form.f{grid-template-columns:1fr}section{padding:70px 0}}
+@media(max-width:520px){.fg{grid-template-columns:1fr}.strip{font-size:17px}.stage{height:420px}.c1{height:240px}.c2{top:250px;height:190px}.c3{top:250px;height:200px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.reveal{opacity:1;transform:none}}
+</style></head><body>
+<header><div class="wrap nav"><a class="logo" href="#home" aria-label="WebZo home"><i>W</i>WebZo</a>
+<nav class="links" id="links" aria-label="Main"><a href="#home">Home</a><a href="#work">Our Work</a><a href="#services">Services</a><a href="#how">How It Works</a><a href="#about">About Us</a></nav>
+<a class="btn" href="#start">Start a Project →</a><button id="burger" aria-label="Menu" aria-expanded="false">☰</button></div></header>
+
+<main>
+<section class="hero" id="home"><div class="wrap hgrid"><div>
+<div class="eyebrow">DESIGN ▪ DEVELOPMENT ▪ DIGITAL GROWTH</div>
+<h1>Websites That Make Your Business <span class="grad">Stand Out.</span></h1>
+<p class="lead">From local shops to growing brands, we design and build modern websites that turn your ideas into reality.</p>
+<div class="cta"><a class="btn" href="#start">Build My Website</a><a class="btn ghost" href="#work">Explore Our Work</a></div></div>
+<div class="stage" id="stage">
+<div class="card3 c1" data-p="0" tabindex="0" role="link" aria-label="Open Sweet Shop website"><div class="in"><small>Sweet Shop</small><b>Sweet Shop</b><span class="ball"></span><span class="ball" style="animation-delay:-.5s"></span><span class="ball" style="animation-delay:-1s"></span><span class="ball" style="animation-delay:-1.5s"></span></div></div>
+<div class="card3 c2" data-p="1" tabindex="0" role="link" aria-label="Open Healthcare website"><div class="in"><small>● WebZo</small><b style="color:#1456c9">Healthcare Website</b>🩺</div></div>
+<div class="card3 c3" data-p="2" tabindex="0" role="link" aria-label="Open Portfolio website"><div class="in"><b>Creative Portfolio Website</b><small>Elegant typography and crafts</small></div></div>
+<a class="tag" href="#work" style="left:-2%;top:70px">Sweet Shop Website</a>
+<a class="tag" href="#work" style="left:0;top:395px;animation-delay:-1s">📁 12+ Projects · Built with care</a>
+<a class="tag" href="#how" style="right:6%;bottom:0;animation-delay:-3s">&lt;/&gt; Our Approach · Design. Build. Launch.</a>
+</div></div>
+<div class="wrap strip" style="position:absolute;bottom:0;left:0;right:0;margin:auto"><span>✦ Modern &amp; Responsive Design</span><span>✦ Built for Your Business</span><span>✦ Easy Project Management</span></div></section>
+
+<section id="work"><div class="wrap reveal"><div class="eyebrow">OUR WORK</div><h2>Projects built with care</h2><p class="lead">Tap any project to open the live website.</p>
+<div class="filters" id="filters"></div><div class="grid" id="pgrid"></div><p id="pempty" class="lead" style="display:none;margin-top:30px">No published projects in this category yet.</p></div></section>
+
+<section id="services" style="background:linear-gradient(var(--bg),var(--bg2),var(--bg))"><div class="wrap reveal"><div class="eyebrow">SERVICES</div><h2>What we build</h2><p class="lead">Choose a service and we’ll preselect it in your request.</p><div class="grid" id="sgrid"></div></div></section>
+
+<section id="how"><div class="wrap reveal"><div class="eyebrow">HOW IT WORKS</div><h2>From idea to launch</h2>
+<div class="grid steps"><div class="glass"><h3>Share Your Idea</h3><p>Tell us about your business and goals.</p></div><div class="glass"><h3>Discuss the Project</h3><p>We talk through scope and features.</p></div><div class="glass"><h3>Plan and Design</h3><p>Layouts and visuals shaped to your brand.</p></div><div class="glass"><h3>Develop the Website</h3><p>Responsive, fast, and built to grow.</p></div><div class="glass"><h3>Review and Launch</h3><p>You review, we refine, then go live.</p></div></div>
+<div class="cta"><a class="btn" href="#start">Start Your Project →</a></div></div></section>
+
+<section id="about" style="background:var(--bg2)"><div class="wrap reveal"><div class="eyebrow">ABOUT US</div><h2>About WebZo</h2><p class="lead" style="max-width:760px">WebZo designs and builds modern, responsive websites for businesses and individuals. Founded by Sheikh Salman and Rahul Pawar, we focus on clear design, usability, and websites that fit the way your business works.</p>
+<div class="grid"><a class="glass" href="tel:+918305147055"><span class="ic">📞</span><h3>+91 83051 47055</h3><p>Sheikh Salman</p></a><a class="glass" href="tel:+919826776407"><span class="ic">📞</span><h3>+91 98267 76407</h3><p>Rahul Pawar</p></a><a class="glass" href="mailto:webzoknw@gmail.com"><span class="ic">✉️</span><h3>webzoknw@gmail.com</h3><p>Email us</p></a></div></div></section>
+
+<section id="start"><div class="wrap reveal" style="max-width:860px"><div class="eyebrow">START A PROJECT</div><h2>Let’s build your website</h2><p class="lead">No account needed. Tell us a little and we’ll get back to you.</p>
+<form class="f" id="rf" novalidate>
+<label>Full name *<input name="name" maxlength="80" autocomplete="name"><span class="err"></span></label>
+<label>Phone number *<input name="phone" maxlength="20" inputmode="tel" autocomplete="tel"><span class="err"></span></label>
+<label>Email<input name="email" type="email" maxlength="120" autocomplete="email"><span class="err"></span></label>
+<label>Preferred contact<select name="contact"><option>Phone call</option><option>WhatsApp</option><option>Email</option></select></label>
+<label>Business name *<input name="biz" maxlength="100"><span class="err"></span></label>
+<label>Business category *<input name="cat" maxlength="80" placeholder="e.g. Sweet shop, clinic"><span class="err"></span></label>
+<label>Website type *<select name="type" id="wtype"><option value="">Select…</option><option>Business</option><option>Sweet Shop</option><option>Restaurant</option><option>E-commerce</option><option>Portfolio</option><option>Custom Website</option></select><span class="err"></span></label>
+<label>Reference URL<input name="ref" maxlength="200" placeholder="https://"><span class="err"></span></label>
+<div class="full"><label>Desired features</label><div class="chips" style="margin-top:8px"><label><input type="checkbox" name="ft" value="Product catalog">Product catalog</label><label><input type="checkbox" name="ft" value="Gallery">Gallery</label><label><input type="checkbox" name="ft" value="Contact form">Contact form</label><label><input type="checkbox" name="ft" value="WhatsApp">WhatsApp</label><label><input type="checkbox" name="ft" value="Maps">Maps</label><label><input type="checkbox" name="ft" value="Online ordering">Online ordering</label><label><input type="checkbox" name="ft" value="Online payments">Online payments</label><label><input type="checkbox" name="ft" value="Appointment booking">Appointment booking</label></div></div>
+<label>Estimated budget<select name="budget"><option>Not Sure Yet</option><option>Under ₹5,000</option><option>₹5,000–₹10,000</option><option>₹10,000–₹25,000</option><option>Above ₹25,000</option></select></label>
+<label>Expected timeline<input name="time" maxlength="60" placeholder="e.g. 3 weeks"></label>
+<label class="full">Notes<textarea name="notes" rows="4" maxlength="1000"></textarea></label>
+<input class="hp" name="website_url" tabindex="-1" autocomplete="off" aria-hidden="true">
+<p class="full" style="color:var(--tx2);font-size:13px">Your details are used only to respond to this inquiry.</p>
+<div class="full"><button class="btn" id="sbtn" type="submit">Send Project Request →</button> <span class="err" id="gerr" style="margin-left:10px"></span></div></form></div></section>
+</main>
+
+<footer><div class="wrap fg"><div><a class="logo" href="#home"><i>W</i>WebZo</a><p style="margin-top:12px">Design, development and digital growth for your business.</p></div>
+<div><h4>Navigate</h4><a href="#home">Home</a><a href="#work">Our Work</a><a href="#services">Services</a><a href="#how">How It Works</a><a href="#about">About Us</a></div>
+<div><h4>Legal</h4><a href="#" data-m="privacy">Privacy Policy</a><a href="#" data-m="terms">Terms</a></div>
+<div><h4>Contact</h4><a href="tel:+918305147055">+91 83051 47055</a><a href="tel:+919826776407">+91 98267 76407</a><a href="mailto:webzoknw@gmail.com">webzoknw@gmail.com</a></div></div>
+<div class="wrap" style="margin-top:28px">© 2026 WebZo. All rights reserved.</div></footer>
+<a class="wa" href="https://wa.me/918305147055" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="box" id="box"></div></div>
+
+<script>
+// ===== EDIT HERE: add each real project's live website in "url" =====
+var PROJECTS=[
+{t:"Sweet Shop Website",c:"Sweet Shops",e:"🍯",d:"Product catalog, photos, prices and WhatsApp inquiries for a local sweet shop.",url:""},
+{t:"Healthcare Website",c:"Healthcare",e:"🩺",d:"Clean, trustworthy site with services and appointment inquiries.",url:""},
+{t:"Creative Portfolio Website",c:"Portfolios",e:"🎨",d:"Elegant typography and a work gallery for a creative professional.",url:""}];
+var SERVICES=[["🍯","Sweet shop websites","Sweet Shop","Product catalog, photos, prices, WhatsApp."],["🍽️","Restaurant websites","Restaurant","Menus, gallery, hours, location, reservations."],["🛒","E-commerce websites","E-commerce","Catalog, cart, checkout, order management."],["🏢","Business websites","Business","Company info, services, contact forms."],["🎨","Portfolio websites","Portfolio","Profile, work gallery, skills, contact."],["✨","Custom websites","Custom Website","Tailored to your needs."]];
+var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))};
+function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
+var grads=["linear-gradient(135deg,#7a3b12,#e8924a)","linear-gradient(135deg,#0b3a8c,#55c8ff)","linear-gradient(135deg,#111,#5a4a3a)"];
+// open a project: redirect to its live site, else show details
+function openProject(i){var p=PROJECTS[i];if(p.url){window.open(p.url,"_blank","noopener");return}
+ modal('<h2>'+esc(p.t)+'</h2><p class="lead" style="margin-bottom:16px">'+esc(p.d)+'</p><p style="color:var(--tx2)">The live link for this project is being added soon.</p><div class="cta"><a class="btn" href="#start" data-close>Build something like this</a></div>')}
+function modal(h){$("#box").innerHTML=h+'<div class="cta"><button class="btn ghost" data-close>Close</button></div>';$("#modal").classList.add("show")}
+$("#modal").addEventListener("click",function(e){if(e.target.id==="modal"||e.target.closest("[data-close]"))$("#modal").classList.remove("show")});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")$("#modal").classList.remove("show");if((e.key==="Enter")&&e.target.classList&&e.target.classList.contains("card3"))e.target.click()});
+$$("[data-m]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();modal(a.dataset.m==="privacy"?"<h2>Privacy Policy</h2><p>We collect only the details you submit in the project request form, and use them solely to respond to your inquiry. We do not sell your information.</p>":"<h2>Terms</h2><p>Project requests are inquiries, not binding agreements. Budget ranges are not guaranteed prices. Scope and pricing are confirmed with you directly.</p>")})});
+$$(".card3").forEach(function(c){c.addEventListener("click",function(){openProject(+c.dataset.p)})});
+// portfolio
+var cats=["All"].concat(PROJECTS.map(function(p){return p.c}).filter(function(v,i,a){return a.indexOf(v)===i})),cur="All";
+function render(){$("#filters").innerHTML=cats.map(function(c){return'<button class="chip'+(c===cur?" on":"")+'">'+esc(c)+'</button>'}).join("");
+ var list=PROJECTS.map(function(p,i){return[p,i]}).filter(function(x){return cur==="All"||x[0].c===cur});
+ $("#pempty").style.display=list.length?"none":"block";
+ $("#pgrid").innerHTML=list.map(function(x){return'<button class="glass pc" data-i="'+x[1]+'"><div class="th" style="background:'+grads[x[1]%3]+'">'+x[0].e+'</div><div class="bd"><small>'+esc(x[0].c)+'</small><h3>'+esc(x[0].t)+'</h3><p>'+esc(x[0].d)+'</p></div></button>'}).join("")}
+render();
+$("#filters").addEventListener("click",function(e){var b=e.target.closest(".chip");if(b){cur=b.textContent;render()}});
+$("#pgrid").addEventListener("click",function(e){var b=e.target.closest(".pc");if(b)openProject(+b.dataset.i)});
+// services
+$("#sgrid").innerHTML=SERVICES.map(function(s){return'<button class="glass" data-t="'+s[2]+'"><span class="ic">'+s[0]+'</span><h3>'+s[1]+'</h3><p>'+s[3]+'</p></button>'}).join("");
+$("#sgrid").addEventListener("click",function(e){var b=e.target.closest("[data-t]");if(b){$("#wtype").value=b.dataset.t;location.hash="start";$("#start").scrollIntoView()}});
+// nav
+$("#burger").onclick=function(){var o=$("#links").classList.toggle("open");this.setAttribute("aria-expanded",o)};
+$$("#links a").forEach(function(a){a.onclick=function(){$("#links").classList.remove("open")}});
+var secs=$$("main section"),io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){$$("#links a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+x.target.id)})}})},{rootMargin:"-45% 0px -50% 0px"});secs.forEach(function(s){io.observe(s)});
+var rv=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");rv.unobserve(x.target)}})},{threshold:.08});$$(".reveal").forEach(function(r){rv.observe(r)});
+// parallax tilt on hero
+$("#stage").addEventListener("pointermove",function(e){var r=this.getBoundingClientRect();this.style.transform="rotateY("+((e.clientX-r.left)/r.width-.5)*8+"deg) rotateX("+(-((e.clientY-r.top)/r.height-.5))*6+"deg)"});
+$("#stage").addEventListener("pointerleave",function(){this.style.transform=""});
+// form + backend (shared database)
+var DB=null;(async function(){try{DB=await claude.use("db")}catch(e){}})();
+function bad(el,m){el.classList.add("bad");var s=el.parentNode.querySelector(".err");if(s)s.textContent=m}
+$("#rf").addEventListener("submit",async function(e){e.preventDefault();var f=e.target,v=function(n){return f.elements[n].value.trim()};
+ $$(".bad",f).forEach(function(x){x.classList.remove("bad")});$$(".err",f).forEach(function(x){x.textContent=""});$("#gerr").textContent="";var ok=true;
+ if(f.elements.website_url.value)return;
+ if(v("name").length<2){bad(f.elements.name,"Required");ok=false}
+ if(!/^[+\d][\d\s\-]{7,17}$/.test(v("phone"))){bad(f.elements.phone,"Enter a valid phone number");ok=false}
+ if(v("email")&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v("email"))){bad(f.elements.email,"Invalid email");ok=false}
+ if(!v("biz")){bad(f.elements.biz,"Required");ok=false}if(!v("cat")){bad(f.elements.cat,"Required");ok=false}
+ if(!v("type")){bad(f.elements.type,"Choose a type");ok=false}
+ if(v("ref")&&!/^https?:\/\/\S+\.\S+/.test(v("ref"))){bad(f.elements.ref,"Use a full URL");ok=false}
+ if(!ok)return;
+ var btn=$("#sbtn");btn.disabled=true;btn.textContent="Sending…";
+ try{if(!DB)throw 0;
+  var ref=await DB.collection("requests").add({name:v("name"),phone:v("phone"),email:v("email"),contact:v("contact"),business:v("biz"),category:v("cat"),type:v("type"),features:$$("[name=ft]:checked",f).map(function(c){return c.value}),reference:v("ref"),budget:v("budget"),timeline:v("time"),notes:v("notes"),status:"Pending Review",createdAt:new Date().toISOString()});
+  var id="WZ-"+String(ref.id).slice(0,8).toUpperCase();f.reset();
+  modal('<div class="ok">✅</div><h2>Your Project Request Has Been Received!</h2><p class="lead">Reference: <b>'+esc(id)+'</b></p><p style="color:var(--tx2);margin-top:8px">We’ll contact you soon.</p>');
+ }catch(x){$("#gerr").innerHTML="Couldn’t send. Your details are kept — try again, or <a href='https://wa.me/918305147055' style='text-decoration:underline'>message us on WhatsApp</a>."}
+ btn.disabled=false;btn.textContent="Send Project Request →"});
+</script></body></html>
